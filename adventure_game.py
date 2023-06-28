@@ -1,20 +1,17 @@
 import time
 import random
 
-def print_pause(message_to_print):
-    print(message_to_print)
+def print_pause(statment_printer):
+    print(statment_printer)
     time.sleep(2)
     
 def intro():
-    print_pause("You find yourself standing in an open field, filled "
-                "with grass and yellow wildflowers.\n")
+    print_pause("Welcome to the adventure game. Thank you for choosing.\n")
                 
-    print_pause("Rumor has it that a "  + " is somewhere around "
-                "here, and has been terrifying the nearby village.\n")
+    print_pause("Now you have reached the adventure game. There are two basic options in the game. A menu will be displayed to choose to start.\n")
     print_pause("In front of you is a house.\n")
     print_pause("To your right is a dark cave.\n")
-    print_pause("In your hand you hold your trusty (but not very "
-                "effective) dagger.\n")
+    print_pause("There are slight differences in terms of the easy and difficult level of the game.\n")
 
  
 
@@ -35,18 +32,16 @@ def fight(items, option):
         
 def cave(item, option):
     if "sward" not in item:
-        print_pause("\nYou peer cautiously into the cave.")
-        print_pause("\nYou've been here before, and gotten all"
-                    " the good stuff. It's just an empty cave"
-                    " now.")
-        print_pause("\nYou walk back to the field.\n")
+        print_pause("\nThank you cave has been selected to play.")
+         
+        print_pause("\nUnsuccessful selection, please play again.\n")
     while True:
       choi = input("Would you like to (1) fight or (2) ""run away?")
       
       if choi == '1':
           
            if "sward" in item:
-               print_pause("\nYou peer cautiously into the cave.")
+               print_pause("\nThank you cave has been selected to play.")
       
       
       
@@ -58,7 +53,7 @@ def cave(item, option):
               print_pause("\nYou have found the magical Sword of Ogoroth!")
               print_pause("\nYou discard your silly old dagger and take "
                     "the sword with you.")
-              print_pause("\nYou walk back out to the field.\n")
+              print_pause("\nGood luck, please try again..\n")
               item.append("sward")
               fight(item, option)    
     
