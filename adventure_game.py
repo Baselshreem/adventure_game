@@ -36,7 +36,6 @@ def input_choise():
         if option == "1" or option == "2":
             return option
         print(f"Option {option} is invalid. Try again!")
-        
 
 
 def print_pause(statment_printer, delye=2):
@@ -86,8 +85,9 @@ def cave(item, option):
 
         print_pause("\nUnsuccessful selection, please play again.\n")
     while True:
-        choi = input("Would you like to "
-                     "(1) start agin  or (2) Repeat_Play run away?")
+        choi = input(
+            "Would you like to " "(1) start agin  or (2) Repeat_Play run away?"
+        )
 
         if choi == "1":
 
@@ -113,16 +113,18 @@ def house(items, option):
 
     if choise == "1":
         print_pause("\n\n\nThank you for making the right choice ...\n\n\n")
-        againe = input("Would you like to play again? (y/n)").lower()
+        while True:
+            againe = input("Would you like to play again? (y/n)").lower()
 
-        if againe == "y":
-            print_pause("\n\n\nExcellent! Restarting the game ...\n\n\n")
-            house(items, option)
-        elif againe=="n":
-            print_pause("\n\n\nThank you  see you later ...\n\n\n")
-        else:
-            print_pause("\n\n\nplease enter a corect choise ...\n\n\n")   
-            house(items, option)
+            if againe == "y":
+                print_pause("\n\n\nExcellent! Restarting the game ...\n\n\n")
+                house(items, option)
+            elif againe == "n":
+                print_pause("\n\n\nThank you  see you later ...\n\n\n")
+                break
+            else:
+                print_pause("\n\n\nplease enter a corect choise ...\n\n\n")
+
     elif choise == "2":
         print_pause("game over ")
         print_pause("restart selected another choices,   method game ")
@@ -135,7 +137,8 @@ def house(items, option):
 def Repeat_Play():
     # Things that happen when the player runs back to the field
     print_pause("\n.The game is restarting\n")
-    repeat = input( "Would you like to repeat again, "
+    repeat = input(
+                   "Would you like to repeat again,"
                    "please select 1-OK 2-I do not agreen")
     while True:
         if repeat == "1":
@@ -152,15 +155,14 @@ def Repeat_Play():
 
 def play_game():
     items = []
-    option = random.choice(["Basil", "Mohamad", 
-                            "asad", "shraime", 
-                            "sile", "dina"])
-    description()  
-    # function used a print and push 
+    option = random.choice(["Basil", "Mohamad",
+                            "asad", "shraime", "sile", "dina"])
+    description()
+    # function used a print and push
     # a masge on screen to descrip game
-    Start_Play(items, option) 
-    # this is a call start game and tow 
-    #parmeter the first items and socond is option random
+    Start_Play(items, option)
+    # this is a call start game and tow
+    # parmeter the first items and socond is option random
 
 
 play_game()
